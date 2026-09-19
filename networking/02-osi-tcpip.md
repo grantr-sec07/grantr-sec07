@@ -1,4 +1,4 @@
-# OSI & TCP/IP — HTB Network Fundamentals
+# OSI & TCP/IP - HTB Network Fundamentals
 
 ## Les 7 couches OSI
 
@@ -12,7 +12,7 @@
 | 2 | Liaison | Trame | Ethernet, MAC |
 | 1 | Physique | Bits | Câbles, Wi-Fi |
 
-**OSI** = théorique, pour analyser et diagnostiquer — **TCP/IP** = ce qui 
+**OSI** = théorique, pour analyser et diagnostiquer - **TCP/IP** = ce qui 
 tourne réellement sur internet
 
 ## Encapsulation
@@ -24,7 +24,7 @@ Chaque couche ajoute un en-tête. À la réception → désencapsulation inverse
 
 ## Voyage d'un paquet
 
-**IP** → ne change jamais de bout en bout — **MAC** → change à chaque saut 
+**IP** → ne change jamais de bout en bout - **MAC** → change à chaque saut 
 — **ARP** → traduit l'IP du prochain saut en MAC (local uniquement) — 
 **NAT** → remplace l'IP privée par l'IP publique avant internet
 
