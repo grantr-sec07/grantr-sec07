@@ -54,7 +54,7 @@ réservés).
 **Objectif :** Diviser `10.200.20.0/27` (32 IP) en **4 sous-réseaux égaux**.
 
 * **Calcul :** $32 / 4 = 8$ IP par sous-réseau → Nouveau *Block Size* = $8$ 
-($\to$ masque `/29`)
+($\to$ masque `/29`) On part de 10.200.20.0 et on avance par blocs de 8 
 
 | Subnet # | Adresse Réseau | Plage d'hôtes | Broadcast | Masque |
 |:---:|:---|:---|:---|:---:|
