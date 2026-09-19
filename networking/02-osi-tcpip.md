@@ -12,13 +12,9 @@
 | 2 | Liaison | Trame | Ethernet, MAC |
 | 1 | Physique | Bits | Câbles, Wi-Fi |
 
- HEAD
-**Couches 2-4** = transport oriented — **Couches 5-7** = application 
+**Couches 2-4** = transport oriented  **Couches 5-7** = application 
 oriented
-
-**OSI** = théorique, pour analyser et diagnostiquer — **TCP/IP** = ce qui 
-
-**OSI** = théorique, pour analyser et diagnostiquer - **TCP/IP** = ce qui 
+**OSI** = théorique, pour analyser et diagnostiquer  **TCP/IP** = ce qui 
 tourne réellement sur internet
 
 ## Encapsulation
