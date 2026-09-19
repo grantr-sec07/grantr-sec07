@@ -38,11 +38,6 @@ cache ARP*
 
 | Attaque | Concept | Impact | Défense recommandée |
 |:---|:---|:---|:---|
-| **MAC Spoofing** | Modification de l'adresse MAC physique | Bypasser un 
-filtre MAC / usurper un équipement | **802.1X** / Authentification forte |
-| **MAC Flooding** | Saturation de la table CAM du switch avec de fausses 
-MAC | Le switch bascule en mode *Hub* (Fail-Open) et diffuse tout le trafic 
-en broadcast | **Port Security** (limite le nombre de MAC par port) |
-| **ARP Spoofing / Poisoning** | Envoi de réponses ARP gratuites faussées 
-(*Gratuitous ARP*) | Détournement du trafic local / MITM entre la victime et 
-la passerelle | **DAI** (*Dynamic ARP Inspection*), ARP Statique |
+| **MAC Spoofing** | Modification de l'adresse MAC physique | Bypasser un filtre MAC / usurper un équipement | **802.1X** / Authentification forte |
+| **MAC Flooding** | Saturation de la table CAM du switch avec de fausses MAC | Le switch bascule en mode *Hub* (Fail-Open) et diffuse tout le trafic en broadcast | **Port Security** (limite le nombre de MAC par port) |
+| **ARP Spoofing / Poisoning** | Envoi de réponses ARP gratuites faussées (*Gratuitous ARP*) | Détournement du trafic local / MITM entre la victime et la passerelle | **DAI** (*Dynamic ARP Inspection*), ARP Statique |
