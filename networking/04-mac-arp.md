@@ -5,8 +5,7 @@
 
 | Partie | Octets | Rôle |
 |:---|:---|:---|
-| **OUI** | 3 premiers (24 bits) | Identifie le fabricant (attribué par 
-l'IEEE) |
+| **OUI** | 3 premiers (24 bits) | Identifie le fabricant (attribué par l'IEEE) |
 | **NIC** | 3 derniers (24 bits) | Identifiant unique de la carte réseau |
 
 ### Bits spécifiques du 1er octet
