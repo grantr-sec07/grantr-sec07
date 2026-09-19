@@ -1,4 +1,4 @@
-# Proxys — HTB Network Fundamentals
+# Proxys - HTB Network Fundamentals
 
 ## C'est quoi un proxy ?
 Un intermédiaire qui **inspecte le trafic** applicatif (Couche 7 OSI), contrairement à une simple passerelle qui se contente de le transporter.
