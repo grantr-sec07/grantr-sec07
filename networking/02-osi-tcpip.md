@@ -14,6 +14,7 @@
 
 **Couches 2-4** = transport oriented  
 **Couches 5-7** = application oriented
+
 **OSI** = théorique, pour analyser et diagnostiquer  
 **TCP/IP** = ce qui tourne réellement sur internet
 
