@@ -23,7 +23,7 @@
 
 ---
 
-## ARP — Address Resolution Protocol
+## ARP - Address Resolution Protocol
 Résout une adresse IP (Couche 3) en adresse MAC (Couche 2) sur le réseau 
 local. **Ne traverse jamais un routeur.**
 
