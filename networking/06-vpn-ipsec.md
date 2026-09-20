@@ -13,12 +13,9 @@ Interne`
 ## IPsec — Protocoles de sécurité
 
 | Protocole | Chiffrement | Authentification / Intégrité | Usage en 
-production |
-|:---|:---|:---|:---|
-| **AH** (IP Proto 51) | ❌ Non | ✅ Oui | Rare (ne chiffre pas les données) 
-|
-| **ESP** (IP Proto 50) | ✅ Oui | ✅ Oui | Standard (chiffre et 
-authentifie) |
+production ||:---|:---|:---|:---|
+| **AH** (IP Proto 51) | ❌ Non | ✅ Oui | Rare (ne chiffre pas les données) |
+| **ESP** (IP Proto 50) | ✅ Oui | ✅ Oui | Standard (chiffre et authentifie) |
 
 ---
 
@@ -26,10 +23,8 @@ authentifie) |
 
 | Mode | Ce qui est chiffré | Cas d'usage |
 |:---|:---|:---|
-| **Mode Transport** | Charge utile (Data) uniquement | Communication 
-Hôte-à-Hôte sur un même réseau |
-| **Mode Tunnel** | Paquet IP entier (En-tête d'origine + Data) | VPN 
-Site-à-Site ou Client-à-Site (Télétravail) |
+| **Mode Transport** | Charge utile (Data) uniquement | Communication Hôte-à-Hôte sur un même réseau |
+| **Mode Tunnel** | Paquet IP entier (En-tête d'origine + Data) | VPN Site-à-Site ou Client-à-Site (Télétravail) |
 
 ---
 
