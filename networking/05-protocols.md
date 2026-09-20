@@ -21,8 +21,7 @@ overhead, aucune garantie de livraison.
 | **Kerberos** | 88 | Authentification (Active Directory) |
 | **POP3 / IMAP** | 110 / 143 | Relève de courriels (Cleartext) |
 | **SMB** | 445 | Partage de fichiers & RPC Windows |
-| **LDAP / LDAPS** | 389 / 636 | Annuaire Active Directory (Cleartext / TLS) 
-|
+| **LDAP / LDAPS** | 389 / 636 | Annuaire Active Directory (Cleartext / TLS) |
 | **MySQL / MSSQL** | 3306 / 1433 | Bases de données relationnelles |
 | **RDP** | 3389 | Bureau à distance Windows |
 
