@@ -1,6 +1,6 @@
 # 06-vpn-ipsec.md - VPN & IPsec
 
-## VPN — Principe
+## VPN - Principe
 Création d'un tunnel chiffré sur Internet entre un client distant et un 
 réseau privé. Le client obtient une adresse IP interne et accède aux 
 ressources locales comme s'il était sur place.
