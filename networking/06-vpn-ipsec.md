@@ -46,11 +46,11 @@ automatique).*
 
 | Port / Protocole | Rôle |
 |:---|:---|
-| **UDP 500** | IKE — Négociation initiale et échange de clés |
-| **UDP 4500** | NAT-Traversal (NAT-T) — Encapsulation ESP/UDP pour traverser un routeur/NAT |
-| **IP Protocol 50** | ESP — Encapsulating Security Payload (Trafic chiffré) |
-| **IP Protocol 51** | AH — Authentication Header |
-| **TCP 1723** | PPTP — Point-to-Point Tunneling Protocol (*Obsolète*) |
+| **UDP 500** | IKE - Négociation initiale et échange de clés |
+| **UDP 4500** | NAT-Traversal (NAT-T) - Encapsulation ESP/UDP pour traverser un routeur/NAT |
+| **IP Protocol 50** | ESP - Encapsulating Security Payload (Trafic chiffré) |
+| **IP Protocol 51** | AH - Authentication Header |
+| **TCP 1723** | PPTP - Point-to-Point Tunneling Protocol (*Obsolète*) |
 
 ---
 
