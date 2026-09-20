@@ -10,7 +10,7 @@ Interne`
 
 ---
 
-## IPsec — Protocoles de sécurité
+## IPsec - Protocoles de sécurité
 
 | Protocole | Chiffrement | Authentification / Intégrité | Usage en production |
 |:---|:---|:---|:---|
