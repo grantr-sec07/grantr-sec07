@@ -1,4 +1,4 @@
-# 06-vpn-ipsec.md — VPN & IPsec
+# 06-vpn-ipsec.md - VPN & IPsec
 
 ## VPN — Principe
 Création d'un tunnel chiffré sur Internet entre un client distant et un 
@@ -33,7 +33,7 @@ Site-à-Site ou Client-à-Site (Télétravail) |
 
 ---
 
-## IKE (Internet Key Exchange) — Négociation des clés
+## IKE (Internet Key Exchange) - Négociation des clés
 Protocole utilisé pour négocier les algorithmes et établir les clés de 
 chiffrement avant le transfert via ESP.
 
