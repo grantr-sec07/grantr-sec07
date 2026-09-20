@@ -12,8 +12,8 @@ Interne`
 
 ## IPsec — Protocoles de sécurité
 
-| Protocole | Chiffrement | Authentification / Intégrité | Usage en 
-production ||:---|:---|:---|:---|
+| Protocole | Chiffrement | Authentification / Intégrité | Usage en production |
+|:---|:---|:---|:---|
 | **AH** (IP Proto 51) | ❌ Non | ✅ Oui | Rare (ne chiffre pas les données) |
 | **ESP** (IP Proto 50) | ✅ Oui | ✅ Oui | Standard (chiffre et authentifie) |
 
@@ -47,10 +47,8 @@ automatique).*
 | Port / Protocole | Rôle |
 |:---|:---|
 | **UDP 500** | IKE — Négociation initiale et échange de clés |
-| **UDP 4500** | NAT-Traversal (NAT-T) — Encapsulation ESP/UDP pour 
-traverser un routeur/NAT |
-| **IP Protocol 50** | ESP — Encapsulating Security Payload (Trafic chiffré) 
-|
+| **UDP 4500** | NAT-Traversal (NAT-T) — Encapsulation ESP/UDP pour traverser un routeur/NAT |
+| **IP Protocol 50** | ESP — Encapsulating Security Payload (Trafic chiffré) |
 | **IP Protocol 51** | AH — Authentication Header |
 | **TCP 1723** | PPTP — Point-to-Point Tunneling Protocol (*Obsolète*) |
 
