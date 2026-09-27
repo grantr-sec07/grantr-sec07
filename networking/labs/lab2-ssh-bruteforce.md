@@ -54,11 +54,9 @@ _(capture : sorties `last`, `who`, `ss`)_
 
 | Source | Ce qu'elle confirme |
 |---|---|
-| `last -a` | `fonfon pts/2 21:18 still logged in 192.168.183.146` → 
-session réussie |
+| `last -a` | `fonfon pts/2 21:18 still logged in 192.168.183.146` → session réussie |
 | `who` | `fonfon pts/2 21:18 (192.168.183.146)` → session active |
-| `sudo ss -tapn` | `ESTAB 192.168.183.204:22 ← 192.168.183.146:55511` (PID 
-sshd 25714) → connexion vivante |
+| `sudo ss -tapn` | `ESTAB 192.168.183.204:22 ← 192.168.183.146:55511` (PID sshd 25714) → connexion vivante |
 
 Le **port 55511** relie les trois sources : log, historique de connexion, 
 état réseau en direct.
