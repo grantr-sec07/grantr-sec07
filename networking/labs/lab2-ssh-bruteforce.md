@@ -54,7 +54,7 @@ _(capture : sorties `last`, `who`, `ss`)_
 
 | Source | Ce qu'elle confirme |
 |---|---|
-| `last -a` | `fonfon pts/2 21:18 still logged in 192.168.183.146` → session réussie |
+| `last -a` | `fonfon pts/2 21:18 still logged in 192.168.183.146` → session réussie <img width="556" height="157" alt="image" src="https://github.com/user-attachments/assets/74a7bcc7-c77e-4ff7-8fde-23acae168916" /> |
 | `who` | `fonfon pts/2 21:18 (192.168.183.146)` → session active |
 | `sudo ss -tapn` | `ESTAB 192.168.183.204:22 ← 192.168.183.146:55511` (PID sshd 25714) → connexion vivante |
 
