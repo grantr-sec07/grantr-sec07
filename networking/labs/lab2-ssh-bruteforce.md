@@ -31,6 +31,7 @@ _(capture : les 3 `Failed password` + le `Accepted password`)_
 21:18:14  New session 882 of user fonfon
 ```
 
+
 **Corrélation :** même compte (`fonfon`), même IP source 
 (`192.168.183.146`), méthode
 **password** → les 3 échecs et la réussite forment un même incident.
@@ -41,6 +42,8 @@ apparaît dans la même fenêtre. Elle **ne fait pas partie** de l'incident :
 mauvaise IP source
 (127.0.0.1) et mauvaise méthode (publickey). On ne corrèle que ce qui a la 
 même IP + user + méthode.
+
+<img width="1568" height="503" alt="image" src="https://github.com/user-attachments/assets/3a962794-8940-47e0-8e9d-c58f5babeb7a" />
 
 **Note :** le port source change (55509 → 55511) car chaque connexion `ssh` 
 ouvre un nouveau
