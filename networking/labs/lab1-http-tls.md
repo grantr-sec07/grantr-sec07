@@ -54,8 +54,7 @@ default via 192.168.182.1 dev enp0s3  metric 20100 <-- DNS
 ```
 Je capturais `enp0s3`, mais le HTTPS sortait par `enp0s8`. 
 
-**Leçon : la mauvaise interface = angle mort, un trafic entier passe hors surveillance.
-** Correctif : `-i any`.
+**Leçon : la mauvaise interface = angle mort, un trafic entier passe hors surveillance.**Correctif : `-i any`.
 
 ## Limites
 Le SNI en clair est **normal** (TLS hors ECH), pas une anomalie en soi. 
