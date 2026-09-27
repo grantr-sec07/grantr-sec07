@@ -23,6 +23,7 @@ Requêtes `A` (IPv4) + `AAAA` (IPv6) en parallèle ; plusieurs A renvoyées
 Réponse appariée à la requête par le **Transaction ID** (`0x8b78`).
 
 ## 2. Handshake TCP
+
 <img width="1400" height="857" alt="image" src="https://github.com/user-attachments/assets/495c40b9-c9d4-408c-b724-7d40efb73f74" />
 
 
@@ -32,6 +33,7 @@ annonce son numéro de séquence et confirme celui de l'autre, avant tout
 échange de données.
 
 ## 3. Client Hello - fuite SNI
+
 <img width="1400" height="857" alt="image" src="https://github.com/user-attachments/assets/1432fce6-7845-4d8d-a834-07e0dc2cb2ca" />
 
 
@@ -43,6 +45,7 @@ sans rien déchiffrer → **source de détection** (repérer un domaine
 malveillant même en HTTPS).
 
 ## 4. Données chiffrées + fermeture
+
 <img width="1400" height="857" alt="image" src="https://github.com/user-attachments/assets/63b6c6ae-315d-48d7-b084-bd65eb764890" />
 
 
@@ -53,17 +56,17 @@ contenu non. Fermeture propre : `FIN, ACK` (196/202) puis `ACK`.
 ---
 
 ## Incident de capture : les 2 routes par défaut
-Première capture : DNS présent mais **0 trafic HTTPS**. Cause :
+Première capture : DNS présent mais **0 trafic HTTPS**.
+
+Cause :
 ```
 default via 10.0.3.2    dev enp0s8  metric 101     <-- internet 
 (prioritaire)
 default via 192.168.182.1 dev enp0s3  metric 20100 <-- DNS
 ```
-Je capturais `enp0s3`, mais le HTTPS sortait par `enp0s8`. **Leçon : la 
-mauvaise interface = angle
-mort, un trafic entier passe hors surveillance.** Correctif : `-i any`.
+Je capturais `enp0s3`, mais le HTTPS sortait par `enp0s8`. 
+**Leçon : la mauvaise interface = angle mort, un trafic entier passe hors surveillance.** Correctif : `-i any`.
 
 ## Limites
-Le SNI en clair est **normal** (TLS hors ECH), pas une anomalie en soi. Une 
-capture mono-interface
-peut faire croire à tort que « rien ne se passe ».
+Le SNI en clair est **normal** (TLS hors ECH), pas une anomalie en soi. 
+Une capture mono-interface peut faire croire à tort que « rien ne se passe ».
