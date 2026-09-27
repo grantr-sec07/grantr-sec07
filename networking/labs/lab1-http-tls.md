@@ -5,8 +5,7 @@ Capture d'un `curl https://example.com` analysée dans Wireshark.
 
 **Capture :**
 ```bash
-sudo tcpdump -i any -w lab1_dns_https.pcap 'port 53 or host 172.66.147.243 
-or host 104.20.23.154'
+sudo tcpdump -i any -w lab1_dns_https.pcap 'port 53 or host 172.66.147.243 or host 104.20.23.154'
 curl -v https://example.com
 ```
 
