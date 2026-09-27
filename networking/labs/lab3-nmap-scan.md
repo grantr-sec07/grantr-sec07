@@ -21,7 +21,7 @@ Un port n'est `open` que si **deux** conditions sont réunies : un service
 écoute **et** le
 pare-feu laisse passer le paquet jusqu'à lui.
 
-## 2. Scan initial (SYN scan) — une anomalie
+## 2. Scan initial (SYN scan) - une anomalie
 ```bash
 sudo nmap -sS --reason -p 22,80,23,3306 192.168.183.204
 ```
@@ -35,7 +35,7 @@ Résultat : `22 open` (`syn-ack`), mais `80`, `23`, `3306` en **filtered**
 Le `80` était attendu `open` (un service y écoute) → **anomalie** : quelque 
 chose drope les paquets.
 
-## 3. Investigation — le pare-feu
+## 3. Investigation - le pare-feu
 ```bash
 sudo ufw status verbose        # sur l'Ubuntu
 ```
