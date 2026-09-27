@@ -13,7 +13,8 @@ curl -v https://example.com
 ---
 
 ## 1. Résolution DNS
-![DNS]<img width="1568" height="319" alt="image" src="https://github.com/user-attachments/assets/4eac94d7-3c26-4bcb-9e0f-5dd990f05e8b" />
+[DNS]
+<img width="1568" height="319" alt="image" src="https://github.com/user-attachments/assets/4eac94d7-3c26-4bcb-9e0f-5dd990f05e8b" />
 
 
 Le client interroge le stub local `127.0.0.53` (systemd-resolved), relayé 
