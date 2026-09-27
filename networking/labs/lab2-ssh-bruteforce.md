@@ -66,9 +66,7 @@ Trois angles indépendants concordent → fait établi.
 - **Détection :** N échecs suivis d'une réussite, même IP + même compte, 
 dans une courte fenêtre
   → motif de **brute force aboutie** (règle SIEM à écrire au Bloc 3).
-- **Réponse :** vérifier si l'utilisateur est légitime ; sinon contenir
-réinitialiser le mot depasse, terminer la session, auditer les actions réalisées après la connexion.
-
+- **Réponse :** vérifier si l'utilisateur est légitime ; sinon contenir : réinitialiser le mot de passe, terminer la session, auditer les actions réalisées après la connexion.
 ## 5. Limites / faux positifs
 - Un utilisateur qui se trompe 2-3 fois de mot de passe puis réussit produit 
 le **même motif** → d'où l'importance du contexte (IP connue ? horaire ? volume ?).
