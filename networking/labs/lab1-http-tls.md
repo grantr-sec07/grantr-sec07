@@ -50,8 +50,7 @@ Première capture : DNS présent mais **0 trafic HTTPS**.
 
 Cause :
 ```
-default via 10.0.3.2    dev enp0s8  metric 101     <-- internet 
-(prioritaire)
+default via 10.0.3.2    dev enp0s8  metric 101 <-- internet (prioritaire)
 default via 192.168.182.1 dev enp0s3  metric 20100 <-- DNS
 ```
 Je capturais `enp0s3`, mais le HTTPS sortait par `enp0s8`. 
