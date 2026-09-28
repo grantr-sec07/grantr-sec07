@@ -1,4 +1,4 @@
-# Restitution orale — Lab 4 : connexion sortante suspecte
+# Restitution orale - Lab 4 : connexion sortante suspecte
 
 ## 1. Contexte
 Serveur Ubuntu, alerte : une **connexion sortante** inhabituelle. Mission : 
@@ -13,6 +13,9 @@ trouver le processus, dire s'il est malveillant, réagir.
 ment, pas le noyau).
 - **`sha256sum`** → l'IOC.
 - **PPID** → `sshd → bash → beacon` (lancé depuis un shell SSH).
+
+<img width="731" height="458" alt="image" src="https://github.com/user-attachments/assets/b44db0cc-a925-4e09-acfe-a5133159f53c" />
+
 
 ## 3. Verdict
 Suspect : binaire dans **`/tmp`** + nom anodin + sortie **:4444** (C2). 
