@@ -1,4 +1,4 @@
-# Restitution orale - Lab 4 : connexion sortante suspecte
+# Lab 4 : connexion sortante suspecte
 
 ## 1. Contexte
 Serveur Ubuntu, alerte : une **connexion sortante** inhabituelle. Mission : 
