@@ -13,9 +13,9 @@ trouver le processus, dire s'il est malveillant, réagir.
 ment, pas le noyau).
 - **`sha256sum`** → l'IOC.
 - **PPID** → `sshd → bash → beacon` (lancé depuis un shell SSH).
+  
 
 <img width="765" height="302" alt="image" src="https://github.com/user-attachments/assets/1f6bebc4-4cae-4f75-bcf7-3d2a7e02f6a4" />
-
 
 
 ## 3. Verdict
@@ -27,6 +27,8 @@ Isoler (`kill 41133`) → éradiquer (`rm /tmp/beacon`) → bloquer les IOC
 (hash + `:4444`) → approfondir (`bash_history`, date du fichier, hash 
 ailleurs).
 
+<img width="326" height="49" alt="image" src="https://github.com/user-attachments/assets/eddfa04b-f9c0-4638-a701-85c69f985478" />
+
+
 ## 5. Leçon
-Partir de l'indice, remonter jusqu'à une preuve irréfutable, conclure sur 
-des éléments corroborés. Prouver, pas deviner.
+Partir de l'indice, remonter jusqu'à une preuve irréfutable, conclure sur des éléments corroborés. Prouver, pas deviner.
