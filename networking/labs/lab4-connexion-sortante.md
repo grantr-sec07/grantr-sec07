@@ -14,7 +14,8 @@ ment, pas le noyau).
 - **`sha256sum`** → l'IOC.
 - **PPID** → `sshd → bash → beacon` (lancé depuis un shell SSH).
 
-<img width="731" height="458" alt="image" src="https://github.com/user-attachments/assets/b44db0cc-a925-4e09-acfe-a5133159f53c" />
+<img width="765" height="302" alt="image" src="https://github.com/user-attachments/assets/1f6bebc4-4cae-4f75-bcf7-3d2a7e02f6a4" />
+
 
 
 ## 3. Verdict
