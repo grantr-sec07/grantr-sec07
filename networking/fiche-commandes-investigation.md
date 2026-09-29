@@ -1,4 +1,4 @@
-# Fiche — Commandes Linux d'investigation
+# Fiche - Commandes Linux d'investigation
 
 Boîte à outils d'analyste, construite à partir des labs du Bloc 1.
 **Méthode :** partir de l'indice → remonter jusqu'à une preuve → 
@@ -9,7 +9,7 @@ Chaîne type d'une investigation :
 
 ---
 
-## 1. Réseau — connexions actives
+## 1. Réseau - connexions actives
 | Commande | Rôle |
 |---|---|
 | `ss -tanp` | Lister les connexions TCP + le **processus** derrière (PID). 
@@ -19,7 +19,7 @@ Le point de départ. |
 `-t` TCP · `-a` toutes · `-n` numérique · `-p` processus.
 États clés : `ESTAB` = connexion active **maintenant**.
 
-## 2. Processus — fiche d'identité
+## 2. Processus - fiche d'identité
 | Commande | Rôle |
 |---|---|
 | `ps -o pid,ppid,user,comm,args -p <PID>` | PID, **PPID** (parent), 
@@ -30,7 +30,7 @@ large). |
 Le PPID permet de **remonter la lignée** (qui a lancé le processus : shell ? 
 cron ? service ?).
 
-## 3. Binaire / fichier — vérité et empreinte
+## 3. Binaire / fichier - vérité et empreinte
 | Commande | Rôle |
 |---|---|
 | `ls -l /proc/<PID>/exe` | Voir le **vrai binaire** exécuté (le nom du 
@@ -43,7 +43,7 @@ si le fichier a été supprimé du disque ! |
 Drapeau rouge : un binaire exécuté depuis `/tmp` (zone temporaire 
 inscriptible par tous).
 
-## 4. Logs — authentification & services
+## 4. Logs - authentification & services
 | Commande | Rôle |
 |---|---|
 | `sudo grep sshd /var/log/auth.log` | Événements SSH. |
