@@ -1,4 +1,4 @@
-# Windows Fundamentals - Notes SOC
+# Windows Fundamentals
 
 Socle Windows orienté détection. Fil rouge : **qui + d'où + quand + quoi** -
 l'outil légitime ne prouve rien, c'est l'usage qui trahit.
