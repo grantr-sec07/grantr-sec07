@@ -1,6 +1,6 @@
 # Windows Fundamentals - Notes SOC
 
-Socle Windows orienté détection. Fil rouge : **qui + d'où + quand + quoi** —
+Socle Windows orienté détection. Fil rouge : **qui + d'où + quand + quoi** -
 l'outil légitime ne prouve rien, c'est l'usage qui trahit.
 
 ## Processus
