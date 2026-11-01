@@ -31,13 +31,11 @@ Un objet se désigne de plusieurs façons :
 | Attribut | Rôle |
 |---|---|
 | **SID** | identifiant de sécurité unique (RID 500 = Administrator) |
-| **GUID** (objectGUID) | identifiant unique, **ne change jamais**, même 
-après suppression |
+| **GUID** (objectGUID) | identifiant unique, **ne change jamais**, même après suppression |
 | **DN** | chemin complet (`cn=bjones,ou=IT,dc=inlanefreight,dc=local`) |
 | **sAMAccountName** | nom de connexion (≤ 20 car.) |
 | **UPN** | `user@domaine` |
-| **sIDHistory** | anciens SID (migration) - **abusable** si SID filtering 
-désactivé |
+| **sIDHistory** | anciens SID (migration) - **abusable** si SID filtering désactivé |
 
 **Security principal** = ce qui peut s'authentifier / détenir des droits →
 **users, computers, groups** (ont un SID). Contacts, imprimantes, OU = GUID 
@@ -79,12 +77,9 @@ réveille).
 
 | Type | Où | Attaque |
 |---|---|---|
-| **NT hash** | SAM / NTDS.dit (stocké) | **Pass-the-Hash** + crack offline 
-|
-| **Net-NTLMv1/v2** | réseau (challenge/réponse, jetable) | crack / 
-**relay** - ❌ pas de PtH |
-| **DCC2** | cache local (10 derniers logins) | crack ultra-lent (souvent 
-futile) |
+| **NT hash** | SAM / NTDS.dit (stocké) | **Pass-the-Hash** + crack offline |
+| **Net-NTLMv1/v2** | réseau (challenge/réponse, jetable) | crack / **relay** - ❌ pas de PtH |
+| **DCC2** | cache local (10 derniers logins) | crack ultra-lent (souvent futile) |
 
 > **NT hash = réutilisable → PtH.** **Net-NTLM = one-time → relay ou 
 crack.** À ne jamais confondre.
@@ -98,8 +93,7 @@ ouvertes.
 
 - **Type** : Security (permissions) vs Distribution (mail).
 - **Scope** : Domain Local / Global / Universal.
-- **Groupes imbriqués** : un user hérite de droits via une chaîne 
-groupe-dans-groupe,
+- **Groupes imbriqués** : un user hérite de droits via une chaîne groupe-dans-groupe,
   souvent **non voulus**. → **BloodHound** cartographie ces chemins cachés.
 - Privilégiés : Domain Admins (Global), **Enterprise / Schema Admins** 
 (Universal, toute la forêt).
@@ -133,12 +127,10 @@ domaine**.
 |---|---|
 | **LAPS** | mdp admin local unique par poste → casse le Pass-the-Hash |
 | **gMSA** | compte de service, mdp 120 car. auto-roté → inkerberoastable |
-| **Account separation** (`user` / `user_adm`) | limite l'impact d'un 
-phishing |
+| **Account separation** (`user` / `user_adm`) | limite l'impact d'un phishing |
 | **DA uniquement sur les DC** | évite les creds DA en mémoire sur un poste 
 |
-| **MachineAccountQuota = 0** | empêche un user lambda de créer des comptes 
-machine (RBCD/noPac) |
+| **MachineAccountQuota = 0** | empêche un user lambda de créer des comptes machine (RBCD/noPac) |
 | **Audit & logging** | détecter brute-force, Kerberoasting, énumération |
 | **Credential Guard / RunAsPPL** | protège LSASS du dump |
 
