@@ -19,8 +19,7 @@ Forêt (frontière de sécurité réelle)
 attributs.
 - **Trusts** : parent-child (auto, transitif), external, forest. La 
 direction de
-  l'**accès** est **opposée** à la direction de la **confiance** (A trusts B 
-→ B accède à A).
+  l'**accès** est **opposée** à la direction de la **confiance** (A trusts B → B accède à A).
 - **Principe clé** : *le domaine n'est pas la frontière de sécurité, la 
 **forêt** l'est.*
 
@@ -37,20 +36,13 @@ Un objet se désigne de plusieurs façons :
 | **UPN** | `user@domaine` |
 | **sIDHistory** | anciens SID (migration) - **abusable** si SID filtering désactivé |
 
-**Security principal** = ce qui peut s'authentifier / détenir des droits →
-**users, computers, groups** (ont un SID). Contacts, imprimantes, OU = GUID 
-seul.
+**Security principal** = ce qui peut s'authentifier / détenir des droits →**users, computers, groups** (ont un SID). Contacts, imprimantes,OU = GUID seul.
 
 ## 3. Comptes
 
-- **Local** (base SAM) = valable sur **ce host seul**. **Domaine** = tout le 
-domaine.
-- **SYSTEM** (`NT AUTHORITY\SYSTEM`) = plus haut contexte local. Sur un 
-poste joint
-  au domaine, SYSTEM ≈ compte machine → **peut énumérer le domaine sans 
-voler de mot de passe**.
-- **krbtgt** = compte natif caché ; son hash chiffre/signe tous les TGT → 
-clé du royaume (Golden Ticket).
+- **Local** (base SAM) = valable sur **ce host seul**. **Domaine** = tout le domaine.
+- **SYSTEM** (`NT AUTHORITY\SYSTEM`) = plus haut contexte local. Sur un poste jointau domaine, SYSTEM ≈ compte machine → **peut énumérer le domaine sans voler de mot de passe**.
+- **krbtgt** = compte natif caché ; son hash chiffre/signe tous les TGT → clé du royaume (Golden Ticket).
 
 ## 4. Kerberos (le cœur)
 
@@ -70,8 +62,7 @@ Les deux chiffrements = les deux attaques :
 
 - Port **88**. krbtgt est **répliqué sur tous les DC** → n'importe quel DC 
 valide un ticket.
-- Multi-DC : réplication **multi-maître continue** (pas un backup qui se 
-réveille).
+- Multi-DC : réplication **multi-maître continue** (pas un backup qui se réveille).
 
 ## 5. NTLM & hashes
 
@@ -104,8 +95,7 @@ ouvertes.
 dernier gagne**
   (OU > Domaine > Site > Local).
 - **Enforced** force un GPO d'en haut (inverse la règle) ; **Block 
-Inheritance** bloque
-  l'héritage ; Enforced bat Block Inheritance.
+Inheritance** bloque l'héritage ; Enforced bat Block Inheritance.
 - Rafraîchissement : **90 min ± 30** (clients), **5 min** (DC) ; `gpupdate 
 /force` pour forcer.
 - **Abus** : droits `GenericWrite`/`WriteDacl` sur un GPO → 
@@ -116,10 +106,8 @@ Inheritance** bloque
 
 - **FSMO** (5 rôles) : surtout **PDC Emulator** (temps → Kerberos) et **RID 
 Master** (SID uniques).
-- **Global Catalog** : copie partielle de toute la forêt (recherche 
-inter-domaine).
-- **NTDS.dit** (`C:\Windows\NTDS\`) = la base AD : **tous les hash du 
-domaine**.
+- **Global Catalog** : copie partielle de toute la forêt (recherche inter-domaine).
+- **NTDS.dit** (`C:\Windows\NTDS\`) = la base AD : **tous les hash du domaine**.
 
 ## 9. Durcissement (côté défense)
 
