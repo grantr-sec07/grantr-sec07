@@ -1,7 +1,6 @@
 # Active Directory - Notes SOC / Détection
 
-> Socle Active Directory orienté sécurité. Parcours : HTB Academy - 
-*Introduction to
+> Socle Active Directory orienté sécurité. Parcours : HTB Academy - *Introduction to
 > Active Directory* (16 sections). Même fil rouge que le reste du repo :
 > **qui + d'où + quand + quoi** - comprendre pour défendre et détecter.
 
