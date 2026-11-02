@@ -50,8 +50,7 @@ Un objet se désigne de plusieurs façons :
 1. AS-REQ : user chiffre un timestamp avec SON mdp → KDC (sur le DC)
 2. TGT    : KDC renvoie un TGT chiffré avec la clé de krbtgt
 3. TGS-REQ: user présente le TGT → demande un TGS pour un service
-4. TGS    : chiffré avec le hash du COMPTE DE SERVICE → présenté au service 
-→ accès
+4. TGS    : chiffré avec le hash du COMPTE DE SERVICE → présenté au service → accès
 ```
 
 Les deux chiffrements = les deux attaques :
