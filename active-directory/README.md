@@ -8,8 +8,7 @@
 
 | Fichier | Sujet |
 |---|---|
-| [`active-directory-fundamentals.md`](./active-directory-fundamentals.md) | 
-Structure, identité, Kerberos, NTLM, groupes, GPO, durcissement || [`ad-attacks-cheatsheet.md`](./ad-attacks-cheatsheet.md) | Les attaques AD + leur détection (Event IDs, outils) |
+| [`active-directory-fundamentals.md`](./active-directory-fundamentals.md) | Structure, identité, Kerberos, NTLM, groupes, GPO, durcissement || [`ad-attacks-cheatsheet.md`](./ad-attacks-cheatsheet.md) | Les attaques AD + leur détection (Event IDs, outils) |
 
 ## L'idée centrale
 
