@@ -288,9 +288,9 @@ service trop faible, laissé en chiffrement RC4. Les deux parades principales so
 passe long et aléatoire (idéalement un **gMSA**, dont le mot de passe de 120 caractères est
 géré et renouvelé par l'AD lui même) et l'abandon du RC4 au profit de l'AES.
 
-**Prochaine étape, pas encore réalisée :** rejouer cette attaque avec mon SIEM Wazuh branché
-sur le DC, pour capturer réellement l'événement **4769** avec chiffrement RC4 et écrire la
-règle de détection associée. C'est l'objet d'un prochain writeup, côté défense cette fois.
+**La suite, côté défense :** j'ai rejoué cette attaque avec mon SIEM Wazuh branché sur le DC,
+capturé l'événement **4769** en chiffrement RC4 et écrit la règle de détection, validée en
+direct. C'est l'objet du writeup [`kerberoasting-detection.md`](./kerberoasting-detection.md).
 
 ---
 
