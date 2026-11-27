@@ -10,8 +10,7 @@
 |---|---|
 | [`active-directory-fundamentals.md`](./active-directory-fundamentals.md) | Structure, identité, Kerberos, NTLM, groupes, GPO, durcissement |
 | [`ad-attacks-cheatsheet.md`](./ad-attacks-cheatsheet.md) | Les attaques AD et leur détection (Event IDs, outils) |
-| [`kerberoasting-lab.md`](./kerberoasting-lab.md) | Writeup hands-on : Kerberoasting de bout en bout sur mon lab |
-| [`kerberoasting-detection.md`](./kerberoasting-detection.md) | Writeup défense : détecter le Kerberoasting avec Wazuh (règle Event 4769 RC4) |
+| [`kerberoasting-detection.md`](./kerberoasting-detection.md) | Writeup attaque + défense : Kerberoasting et sa détection Wazuh (Event 4769 RC4) |
 | [`asrep-roasting-detection.md`](./asrep-roasting-detection.md) | Writeup attaque + défense : AS-REP Roasting et sa détection Wazuh (Event 4768, preAuthType 0) |
 
 ## L'idée centrale

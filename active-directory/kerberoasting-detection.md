@@ -1,24 +1,40 @@
-# Kerberoasting : la détection (Event 4769)
+# Kerberoasting : attaque et détection (Event 4769)
 
-> Moitié défense du [Kerberoasting](./kerberoasting-lab.md), première ligne de mon catalogue.
+> Première ligne de mon catalogue Identity Attack vers Detection.
 > Lab jetable, identifiants sans valeur.
+
+## L'attaque
+
+N'importe quel utilisateur authentifié peut demander un TGS pour un SPN. Le ticket est chiffré avec
+la clé du compte de service : on le casse hors ligne. Aucune faille, juste un abus de Kerberos et un
+mot de passe de service faible.
+
+Pré-requis : un compte de domaine, même sans privilège (`jfontaine`), et un compte de service avec un
+SPN (`svc_sql`, `MSSQLSvc/sql01.lab.local`).
+
+```bash
+impacket-GetUserSPNs lab.local/jfontaine:'Welcome2026' -dc-ip <IP_DC> -request
+```
+
+Sort un hash `$krb5tgs$23$` (`23` = RC4), cassé avec John et rockyou (`Password1`).
+
+![GetUserSPNs renvoie le hash du compte svc_sql](./img/kerberoast-02-getuserspns-hash.png)
+![John casse le hash : Password1](./img/kerberoast-04-john-crack.png)
+
+MITRE : [T1558.003](https://attack.mitre.org/techniques/T1558/003/).
 
 ## Le signal
 
-Le Kerberoasting : un utilisateur demande un TGS pour un SPN, le ticket est chiffré avec la clé du
-compte de service, on le casse hors ligne. Seule trace sur le DC : **Event 4769** (TGS demandé),
-journal Security.
-
-Un DC en génère en masse, donc alerter sur « tout 4769 » est inutile. Ce qui sépare l'attaque du
-bruit, c'est le **chiffrement du ticket** :
+Seule trace sur le DC : **Event 4769** (TGS demandé), journal Security. Un DC en génère en masse, donc
+alerter sur « tout 4769 » est inutile. Ce qui sépare l'attaque du bruit, c'est le **chiffrement** :
 
 | Trafic | `ticketEncryptionType` |
 |---|---|
 | Normal (comptes machine, krbtgt) | `0x12` (AES256) |
 | Attaque | `0x17` (RC4) |
 
-Windows utilise l'AES par défaut. Les outils de Kerberoasting demandent du RC4 exprès, parce qu'il
-se casse plus vite. Un 4769 en RC4 sur un compte de service détonne.
+Windows utilise l'AES par défaut. Les outils demandent du RC4 exprès, parce qu'il se casse plus vite.
+Un 4769 en RC4 sur un compte de service détonne.
 
 ![Event 4769 décodé : RC4 (0x17), service svc_sql](./img/kerberoast-detect-01-event-4769-rc4.png)
 
@@ -54,11 +70,11 @@ se casse plus vite. Un 4769 en RC4 sur un compte de service détonne.
 
 Trois choses m'ont bloqué, et c'est ce qui vaut le plus :
 
-1. **Mauvais parent.** J'avais `if_sid 60000` (base de *tous* les events Windows). Il fallait
-   `60103` (journal Security). Avec le mauvais parent, la règle ne matche jamais, en silence.
+1. **Mauvais parent.** J'avais `if_sid 60000` (base de *tous* les events Windows). Il fallait `60103`
+   (journal Security). Avec le mauvais parent, la règle ne matche jamais, en silence.
 2. **La constante du blog.** Le guide officiel Wazuh filtre sur `ticketOptions 0x40810000`. Mon vrai
-   event montrait `0x40810010`. Copier la règle telle quelle = elle ne matche rien. On valide contre
-   sa propre télémétrie, pas contre un blog.
+   event montrait `0x40810010`. Copier la règle telle quelle = elle ne matche rien. On valide contre sa
+   propre télémétrie, pas contre un blog.
 3. **ID en double.** Deux règles `100100` dans deux fichiers = Wazuh rejette le doublon. Un ID doit
    être unique.
 
@@ -75,8 +91,8 @@ dashboard.
 
 ## Faux positifs et durcissement
 
-- RC4 légitime possible en domaine mixte (vieux comptes ou applis). Liste blanche si besoin, mais
-  le vrai réflexe est de les corriger.
+- RC4 légitime possible en domaine mixte (vieux comptes ou applis). Liste blanche si besoin, mais le
+  vrai réflexe est de les corriger.
 - Comptes machine exclus par la règle `100101`.
 - Durcissement : forcer l'AES, mots de passe longs ou **gMSA** (120 caractères gérés par l'AD, donc
   incassables). Ma détection RC4 attrape l'attaque **et** la dette technique.
@@ -91,5 +107,4 @@ MITRE ATT&CK : [T1558.003](https://attack.mitre.org/techniques/T1558/003/).
 
 ## Références
 
-- Mon writeup offensif : [`kerberoasting-lab.md`](./kerberoasting-lab.md).
 - MITRE [T1558.003](https://attack.mitre.org/techniques/T1558/003/).
